@@ -1,0 +1,72 @@
+<!-- template/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipo juego de rol</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <nav class="game-nav">
+            <div class="logo">Ashen Legacy</div>
+            <div class="nav-links">
+                <a href="#" class="nav-link" id="characterBtn">Personajes</a>
+                <a href="#" class="nav-link" id="inventoryBtn">Inventario</a>
+                <a href="#" class="nav-link" id="questsBtn">Misiones</a>
+                <a href="{{ url_for('home') }}" class="nav-link" id="logoutBtn">Cerrar Sesión</a>
+            </div>
+        </nav>
+
+        <main class="game-main">
+            <div class="welcome-section">
+                <h1>Bienvenido a Ashen Legacy</h1>
+                <p>Embárcate en una aventura épica en un mundo de fantasía y magia</p>
+            </div>
+
+            <div class="character-cards">
+                <div class="character-card" id="warrior">
+                    <div class="card-image warrior"></div>
+                    <h3>Guerrero</h3>
+                    <p>Maestro del combate cuerpo a cuerpo</p>
+                    <button class="create-btn">Crear Guerrero</button>
+                </div>
+
+                <div class="character-card" id="mage">
+                    <div class="card-image mage"></div>
+                    <h3>Mago</h3>
+                    <p>Dominador de las artes arcanas</p>
+                    <button class="create-btn">Crear Mago</button>
+                </div>
+
+                <div class="character-card" id="rogue">
+                    <div class="card-image rogue"></div>
+                    <h3>Pícaro</h3>
+                    <p>Experto en sigilo y astucia</p>
+                    <button class="create-btn">Crear Pícaro</button>
+                </div>
+            </div>
+        </main>
+
+        <div class="modal" id="characterModal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Crear Personaje</h2>
+                <form id="characterForm">
+                    <input type="text" placeholder="Nombre del personaje" required>
+                    <select required>
+                        <option value="">Selecciona una raza</option>
+                        <option value="human">Humano</option>
+                        <option value="elf">Elfo</option>
+                        <option value="dwarf">Enano</option>
+                    </select>
+                    <button type="submit">Crear</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

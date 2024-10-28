@@ -1,0 +1,151 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MedievalSharp', cursive;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #2c3e50;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/login-fondo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    position: relative;
+    width: 370px;
+    height: 600px; /* Aumentado para acomodar campos adicionales */
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.container::before,
+.container::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 370px;
+    height: 600px; /* Ajustado a la nueva altura */
+    background: linear-gradient(0deg, transparent, #f1c40f, #f1c40f);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+.container::after {
+    animation-delay: -3s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.register-box {
+    position: absolute;
+    inset: 2px;
+    border-radius: 8px;
+    background: #28292d;
+    z-index: 10;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-box h2 {
+    color: #f1c40f;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    width: 300px;
+    margin-top: 25px;
+}
+
+.input-group input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    z-index: 10;
+}
+
+.input-group label {
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    font-size: 1em;
+    color: #8f8f8f;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.input-group input:valid ~ label,
+.input-group input:focus ~ label {
+    color: #f1c40f;
+    transform: translateX(0px) translateY(-34px);
+    font-size: 0.75em;
+}
+
+.input-group input {
+    border-bottom: 2px solid #f1c40f;
+}
+
+.input-group input:valid,
+.input-group input:focus {
+    color: #f1c40f;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: #f1c40f;
+    padding: 11px 25px;
+    width: 100%;
+    margin-top: 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#message {
+    margin-top: 20px;
+    color: #ff0000;
+    text-align: center;
+}
+
+a {
+    color: #f1c40f;
+    text-decoration: none;
+    margin-top: 15px;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    color:#ffffff;
+}
